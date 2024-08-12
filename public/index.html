@@ -10,8 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    hello
+    <form>
+        <h1>HOLY POLLEY</h1>
+        <input type="text" required id="question" placeholder="What is your question..."/>
+        <label>
+            <input type="text" required class="options" placeholder="Option 1"/>
+        </label>
+        <label>
+            <input type="text" required class="options" placeholder="Option 2"/>
+        </label>
+        <div id="buttons">
+            <div id="add"><i class="fa-solid fa-plus"></i></div>
+            <input type="submit" value="POLL"/>
+        </div>
+    </form>
 </body>
 </html>
