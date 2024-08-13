@@ -52,6 +52,7 @@ ul li {
     width: 100%;
     border: 1px solid transparent;
     padding: 8px;
+    min-width: fit-content;
 }
 
 ul li:hover {
@@ -62,5 +63,17 @@ ul li:hover {
 
 ul li i {
     padding: 0 6px 0 0;
+    color: white !important;
 }
 
+.lins:nth-child(3n) {
+    background: linear-gradient(to right, #00C9FF, #92FE9D);
+}
+
+.lins:nth-child(3n+1) {
+    background: linear-gradient(to right, #fc00ff, #00dbde);
+}
+
+.lins:nth-child(3n+2) {
+    background: linear-gradient(to right, #D38312, #A83279);
+}
