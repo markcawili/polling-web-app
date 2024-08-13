@@ -45,7 +45,7 @@
 
             let newInnerListHTML = '';
             Object.keys(data.options).forEach((option, index) => {
-                newInnerListHTML += `<li id="${index}">${option}</li>`;
+                newInnerListHTML += `<li id="${index}"><i class="fa-solid fa-atom"></i>${option}</li>`;
             })
 
             optionsList.innerHTML = newInnerListHTML;
