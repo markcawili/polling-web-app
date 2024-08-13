@@ -43,5 +43,18 @@ app.get('/ids', (req, res) => {
 
 // GET POST PUT DELETE
 
+//For receiving URL for poll
+app.get('/:id', (req, res) => {
+    /*Destructuring id again*/
+    const { id } = req.params;
+    console.log(id);
+    try {
+        return res.status(200).sendFile('poll.html', {root:__dirname + '/public'});
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(500);
+    }
+})
+
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
