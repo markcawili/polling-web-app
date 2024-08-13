@@ -4,10 +4,15 @@ const port = 8383;
 
 //Middleware
 app.use(express.static('public'));
+//Expecting some json
+app.use(express.json());
 
 //routes HTTP verbs
 app.post('/', function (req, res) {
-    res.status(200).send('Hi');
+    const { id, question, options } = req.body;
+    console.log(id, question, options);
+    /*Do not forget to send status*/
+    res.sendStatus(200);
 })
 
 // GET POST PUT DELETE
