@@ -56,7 +56,7 @@
                 const question = document.getElementById("question").value;
 
                 /*Make an Array of all the .options class and map/grab the option.value of each*/
-                const options = Array.from(document.querySelectorAll('.options')).map(option => option.value);
+                const options = new Set(Array.from(document.querySelectorAll('.options')).map(option => option.value));
 
                 /*Get the ids and then check if there is a duplicate*/
                 const idsRes = await fetch('/ids')

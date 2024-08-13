@@ -26,6 +26,7 @@
 
         const question = document.querySelector('main > h1');
         const optionsList = document.querySelector('ul');
+        let optionsFromServer = [];
 
         /*Grab all ids again*/
         async function onLoad() {
@@ -40,17 +41,46 @@
             const res = await fetch('/data/' + id);
             const { data } = await res.json();
             console.log(data);
+            optionsFromServer = data.options;
             /*If it includes ? then no add if not then add ?*/
             question.innerText = data.question + (data.question.includes('?') ? '' : '?');
 
             let newInnerListHTML = '';
-            Object.keys(data.options).forEach((option, index) => {
-                newInnerListHTML += `<li id="${index}"><i class="fa-solid fa-atom"></i>${option}</li>`;
+            Object.keys(data.options).forEach((option) => {
+                newInnerListHTML += `<li id="${option}"><i class="fa-solid fa-atom"></i>${option}</li>`;
             })
 
             optionsList.innerHTML = newInnerListHTML;
+
+            const optionsLi = document.querySelectorAll('li');
+            optionsLi.forEach(option => {
+                option.addEventListener('click', userClick)
+            });
         }
         onLoad();
+
+        const linearGradients = ['#00C9FF, #92FE9D', '#fc00ff, #00dbde', '#D38312, #A83279', '#fdfc47, #24fe41'];
+
+        function userClick(index) {
+            console.log(index.target.id);
+            const selected = index.target.id;
+            /*Spread what is in the array to get max*/
+            const maxNumberOfVotes = Math.max(...Object.values(optionsFromServer));
+
+            /*on click, reset style and show graphs with random gradient*/
+            const optionsLi = document.querySelectorAll('li');
+            optionsLi.forEach(val => {
+                const option = val.id;
+                val.removeEventListener('click', userClick);
+                val.style.background = `linear-gradient(to right, ${linearGradients[Math.floor(Math.random() * linearGradients.length)]})`;
+                val.style.color = '#0f172a';
+                if (maxNumberOfVotes !== 0) {
+                    /*Get value of the option and divide, gives the % */
+                    val.style.width = optionsFromServer[option] === 0 ? '5%' : `${(optionsFromServer[option]/maxNumberOfVotes) * 100}%`
+                }
+            });
+        }
+
     </script>
 </body>
 </html>
