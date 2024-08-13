@@ -55,8 +55,13 @@
 
                 /*Make an Array of all the .options class and map/grab the option.value of each*/
                 const options = Array.from(document.querySelectorAll('.options')).map(option => option.value);
-                /*Random ID*/
-                const id = Math.floor(Math.random() * 10000);
+
+                /*Get the ids and then check if there is a duplicate*/
+                const idsRes = await fetch('/ids')
+                /*Destructured ids*/
+                const {ids} = await idsRes.json();
+                /*Unique id that just spreads what ids are currently in an adds 1 to the new id*/
+                const id = ids.length === 0 ? 1 : Math.max(...ids) + 1;
 
                 /*API call, POST*/
                 const res = await fetch('/', {
