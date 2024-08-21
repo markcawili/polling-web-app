@@ -80,6 +80,14 @@ ul li i {
     background: linear-gradient(to right, #D38312, #A83279);
 }
 
+#url {
+    color: goldenrod;
+    text-align: center;
+    padding: 2px 4px;
+    margin: 4px auto;
+    font-size: 0.8rem;
+}
+
 footer {
     display: grid;
     place-items: center;

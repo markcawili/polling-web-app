@@ -31,7 +31,7 @@ app.post('/', function (req, res) {
         }
     })
     /*Do not forget to send status*/
-    res.sendStatus(200);
+    res.redirect('/' + id);
 })
 
 app.get('/ids', (req, res) => {

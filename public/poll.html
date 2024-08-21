@@ -19,7 +19,7 @@
         <h1></h1>
         <ul id="options"></ul>
     </main>
-
+    <div id="url"></div>
     <footer>
         <a href="/"><i class="fa-solid fa-house"></i></a>
     </footer>
@@ -28,6 +28,9 @@
         /*Get the id of the page and redirect to home page if non-existent*/
         const id = window.location.pathname.replaceAll('/', '');
         console.log(id);
+        const currUrl = window.location.href;
+        const urlDiv = document.getElementById('url');
+        urlDiv.innerText = currUrl;
 
         const question = document.querySelector('main > h1');
         const optionsList = document.querySelector('ul');
@@ -83,6 +86,14 @@
                     if (selected === option) {
                         /*add +1*/
                         val.style.width = optionsFromServer[option] === 0 ? '5%' : `${((optionsFromServer[option] + 1)/maxNumberOfVotes) * 100}%`
+                    } else {
+                        /*Get value of the option and divide, gives the % */
+                        val.style.width = optionsFromServer[option] === 0 ? '5%' : `${(optionsFromServer[option]/maxNumberOfVotes) * 100}%`
+                    }
+                } else {
+                    if (selected === option) {
+                        /*add +1*/
+                        val.style.width =  '100%';
                     } else {
                         /*Get value of the option and divide, gives the % */
                         val.style.width = optionsFromServer[option] === 0 ? '5%' : `${(optionsFromServer[option]/maxNumberOfVotes) * 100}%`

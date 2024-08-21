@@ -15,7 +15,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <form action="#" onsubmit="funcSubmit(this)">
+    <form action="#" onsubmit="funcSubmit(event)">
         <h1>HOLY POLLEY</h1>
         <input type="text" required id="question" placeholder="What is your question..."/>
         <label>
@@ -53,6 +53,7 @@
             addBtn.addEventListener("click", addOption);
 
             async function funcSubmit(e) {
+                e.preventDefault();
                 const question = document.getElementById("question").value;
 
                 /*Make an Array of all the .options class and map/grab the option.value of each*/
@@ -80,7 +81,10 @@
                     })
                 })
 
-                window.location.href = `/${id}`
+                if (res.redirected) {
+                    window.location.href = res.url;
+                }
+                return;
             }
 
         </script>
