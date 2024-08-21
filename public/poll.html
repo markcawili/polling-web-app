@@ -85,10 +85,10 @@
                 if (maxNumberOfVotes !== 0) {
                     if (selected === option) {
                         /*add +1*/
-                        val.style.width = optionsFromServer[option] === 0 ? '5%' : `${((optionsFromServer[option] + 1)/maxNumberOfVotes) * 100}%`
+                        val.style.width = `${((optionsFromServer[option] + 1)/maxNumberOfVotes) * 100}%`
                     } else {
                         /*Get value of the option and divide, gives the % */
-                        val.style.width = optionsFromServer[option] === 0 ? '5%' : `${(optionsFromServer[option]/maxNumberOfVotes) * 100}%`
+                        val.style.width = `${(optionsFromServer[option]/maxNumberOfVotes) * 100}%`
                     }
                 } else {
                     if (selected === option) {
@@ -96,7 +96,7 @@
                         val.style.width =  '100%';
                     } else {
                         /*Get value of the option and divide, gives the % */
-                        val.style.width = optionsFromServer[option] === 0 ? '5%' : `${(optionsFromServer[option]/maxNumberOfVotes) * 100}%`
+                        val.style.width = '0%';
                     }
                 }
             });

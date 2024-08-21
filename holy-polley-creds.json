@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "holy-polley",
+  "private_key_id": "e55b43a7e2c67e5a9ec1217194d18da3e9fd9720",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCxXmwFAJl410sp\nd3twdABfKZGoZzzOwHycsor7VOzeZYiG/tLQQ6j5I2GDHw6bjy+A5h4uhvkvzTfD\nXv5Kf5v2mhVtVXYUeMdEKhmQr5Q5EFiO1BdYVoQ73S547+lCA3uoAgsFP0/zpAgw\nwwgWsnSKprHhGRBhcBxI/6QM+cuReN6N36iLIMLdBwDFhXa6+458eEQajhLLsV4i\nZ9VggY9xZGxU4UBOv9sz4Ooatq3gsmYSypSth1z33YP9gIgdPA/8ipUwtPU0yYoe\ncUziE7n6x/HIi2wtCG78dz1tgY88wHAf7Asd5Q2rMw/9eShiY87lLEBdFieCcpnK\nU1ZtnSLBAgMBAAECggEAA3y4QfbrjYkqFKQhPKpDMZvHHdj9xJDbQlduTRez2oGD\niCftbCPQaCmOar4LEvrjM7UShdaogoyV2pT9CejtX5FS94XVHvzq6ger3gDduKt+\nGjzIQrfcvLKSDdWlr+MSpNB5d/5xK3ifopnLCGs0yF8ToznTbR7/p13DU2/71R3T\nXMHH+lMIO9mRRWggSE2oBhby1oCXcKtSRqYkpcKvH+OLzeLNk6gsOu/NWWMfXay0\nIDVILZgWUp7UvuaNpNkRxE/CAX0zLgEcFc9Ab1c/AyZDfK0oPePYJ1c/TdpBmQCO\nisexpOGkbcenjIkeRhKu0FF69q4ZbmO5gAlWAAzFgQKBgQDZ9v6piBgU0ZQIVjHu\nV9AeywR/uGfM7azSNsIJ/ueKF9/vyo5v0wDEEKF8rYR8YY9xyvAyE65QfeBB6gII\nHXlMU52QGKzlAcQbE9JpeBx790PM4KKq4QgShfFGnk4rwceBLuflKnkioiloQYlj\nHzItYakLXdGAVTHYYvxeUZyosQKBgQDQUeh/1dUC56BxvAmWAtJcxQcaa/+KqIVN\ncPp5DBpkNIdtpxxiH86cIfMtNw+sBgbhbG26vY7COmGE4tt5Q3fwMB+FZHuQAnxT\nik4s6EprVWrJByw5MPa3bANNg33N6/2xYgTCZZskeC7XrX/Ap6Kz5DYpiofiYsQ0\nY0yhaHCfEQKBgBd6HjX+fbGIXWyEdD5a4QTgEyz6nNua4hmGYmIXPbNHHQzEAZGT\n5ao4rFw0iGepTn0QQczzB7yNwmD3Jp7fJdiNzRPfRIgqJ4hPG0PW9yJ3IKtpqrvD\nH053dOSJWpwl9Co69ild6MxNMS6UmIq/qnTu5vldcppjEspe5xX1rm0RAoGAYIul\naiGK4BbDKBLSioByR+ZUXW1x+CwT44kZvCHc1VX28d3B7MP6+CdP0UO0crA0XiLn\nU+VoFSIDchfFSZT4MAvNf//KuDo+rmTpyCw72TS0EcjOOQ81OFrJyRHIqzfU0nGv\n7Pw0A5njc7eH/pxybla0t1npkgTeE711lVSW5VECgYAFotVYq8fzEXvSf78kudxD\nttb7ou9U7Ic2wiAopl2opa4bHZGUBY8L63OJK0onls4Bh95NkkRaRPCXrnYmmUa4\nkgpn6uM5PKNfrdzXpYlsT2a6lPTTQeDVt+u6tuy+8TV8SzXWWFvZ5suGUEKXu4Jb\nUd4w7agTm4dIocakTHKoZQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-d5e9f@holy-polley.iam.gserviceaccount.com",
+  "client_id": "106499208658274378307",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-d5e9f%40holy-polley.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
