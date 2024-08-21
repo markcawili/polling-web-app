@@ -18,7 +18,6 @@ app.post('/', function (req, res) {
         res.status(400).send({status: "Error"})
     }
 
-    console.log(id, question, options);
     const currentPolls = readDb();
     /*Rewrite DB to include what is in there already and then add the new items*/
     writeDb({
@@ -49,7 +48,7 @@ app.get('/:id', (req, res) => {
     const { id } = req.params;
     console.log(id);
     try {
-        return res.status(200).sendFile('poll.html', {root:__dirname + '/public'});
+        return res.status(200).sendFile('poll.html', {root: __dirname + '/public'});
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
@@ -62,6 +61,15 @@ app.get('/data/:id', (req, res) => {
     /*Read data of id*/
     const data = readDb()[id];
     res.status(200).send({data});
+})
+
+//For the vote, sends and updates the DB
+app.post('/vote', (req, res) => {
+    const { id, vote } = req.body;
+    const data = readDb();
+    data[id]['options'][vote] += 1;
+    writeDb(data);
+    res.sendStatus(200);
 })
 
 app.listen(port, () => console.log(`Server started on port ${port}`));

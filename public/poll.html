@@ -19,6 +19,11 @@
         <h1></h1>
         <ul id="options"></ul>
     </main>
+
+    <footer>
+        <a href="/"><i class="fa-solid fa-house"></i></a>
+    </footer>
+
     <script>
         /*Get the id of the page and redirect to home page if non-existent*/
         const id = window.location.pathname.replaceAll('/', '');
@@ -34,19 +39,18 @@
             const { ids } = await idsRes.json();
 
             if (!ids.includes(id)) {
-                /**/
                 window.location.href = '/';
             }
 
             const res = await fetch('/data/' + id);
             const { data } = await res.json();
-            console.log(data);
+            // console.log(data);
             optionsFromServer = data.options;
             /*If it includes ? then no add if not then add ?*/
             question.innerText = data.question + (data.question.includes('?') ? '' : '?');
 
             let newInnerListHTML = '';
-            Object.keys(data.options).forEach((option) => {
+            Object.keys(data.options).forEach((option, index) => {
                 newInnerListHTML += `<li id="${option}"><i class="fa-solid fa-atom"></i>${option}</li>`;
             })
 
@@ -57,6 +61,7 @@
                 option.addEventListener('click', userClick)
             });
         }
+
         onLoad();
 
         async function userClick(index) {
@@ -70,7 +75,9 @@
             optionsLi.forEach(val => {
                 const option = val.id;
                 val.removeEventListener('click', userClick);
+
                 val.classList.add('lins');
+
                 val.style.color = '#0f172a';
                 if (maxNumberOfVotes !== 0) {
                     if (selected === option) {
@@ -82,6 +89,19 @@
                     }
                 }
             });
+
+            /*Send result to server*/
+            const res = await fetch('/vote', {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    id,
+                    vote: selected
+                })
+            })
+
         }
 
     </script>

@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
     background: #0F172A;
     color: white;
+    padding: 8px;
 }
 
 main {
@@ -21,8 +22,8 @@ main {
     /*self centering*/
     margin: 0 auto;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }
@@ -53,6 +54,7 @@ ul li {
     border: 1px solid transparent;
     padding: 8px;
     min-width: fit-content;
+    max-width: 100% !important;
 }
 
 ul li:hover {
@@ -76,4 +78,20 @@ ul li i {
 
 .lins:nth-child(3n+2) {
     background: linear-gradient(to right, #D38312, #A83279);
+}
+
+footer {
+    display: grid;
+    place-items: center;
+}
+
+footer:hover {
+    color: goldenrod;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

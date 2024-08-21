@@ -56,10 +56,12 @@
                 const question = document.getElementById("question").value;
 
                 /*Make an Array of all the .options class and map/grab the option.value of each*/
-                const options = new Set(Array.from(document.querySelectorAll('.options')).map(option => option.value));
+                const options = Array.from(document.querySelectorAll('.options')).map(option => option.value);
+
+                const uniqueOptions = [...new Set(options)];
 
                 /*Get the ids and then check if there is a duplicate*/
-                const idsRes = await fetch('/ids')
+                const idsRes = await fetch('/ids');
                 /*Destructured ids*/
                 const {ids} = await idsRes.json();
                 /*Unique id that just spreads what ids are currently in an adds 1 to the new id*/
@@ -74,7 +76,7 @@
                     body: JSON.stringify({
                         id,
                         question,
-                        options
+                        options: uniqueOptions
                     })
                 })
 
